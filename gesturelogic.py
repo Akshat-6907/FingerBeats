@@ -2,13 +2,12 @@ def handsgesture(hand_landmarks):
     list1 = []
 
     #get coordinates of all points
-    for lm in hand_landmarks.landmark : list1.append(lm)
+    list1 = list(hand_landmarks.landmark)
     '''{
-        [6] is index finger base , [8] is index finger tip,
-        [10] is index middle base , [12] is index middle tip,
-        [14] is index ring base , [16] is index ring tip,
-        [18] is index pinky base , [20] is index pinky tip,
-        [3] is index thumb base , [4] is index thumb tip
+        [6] is index finger first bend joint , [8] is index finger tip,
+        [10] is index middle first bend joint , [12] is index middle tip,
+        [14] is index ring first bend joint , [16] is index ring tip,
+        [18] is index pinky first bend joint , [20] is index pinky tip,
 
         each contains x and y coords.
     }'''
@@ -21,7 +20,7 @@ def handsgesture(hand_landmarks):
                     list1[20].y < list1[18].y  # Pinky
                     ]
 
-    index,middle,ring,pinky = finger_state[0],finger_state[1],finger_state[2],finger_state[3]
+    index,middle,ring,pinky = finger_state
     
     if list1[5].x < list1[17].x:
         # Hand orientation puts the thumb on the LEFT side then check if thumb tip is on left 0f inner joint
@@ -47,14 +46,13 @@ def signs(hand_landmarks):
     list1 = []
 
     #get coordinates of all points
-    for lm in hand_landmarks.landmark : list1.append(lm)
+    list1 = list(hand_landmarks.landmark)
     '''{
-        [6] is index finger base , [8] is index finger tip,
-        [10] is index middle base , [12] is index middle tip,
-        [14] is index ring base , [16] is index ring tip,
-        [18] is index pinky base , [20] is index pinky tip,
-        [3] is index thumb base , [4] is index thumb tip
-
+        [6] is index finger first bend joint , [8] is index finger tip,
+        [10] is index middle first bend joint , [12] is index middle tip,
+        [14] is index ring first bend joint , [16] is index ring tip,
+        [18] is index pinky first bend joint , [20] is index pinky tip,
+    
         each contains x and y coords.
     }'''
 
@@ -66,7 +64,7 @@ def signs(hand_landmarks):
                     list1[20].y < list1[18].y  # Pinky
                     ]
 
-    index,middle,ring,pinky = finger_state[0],finger_state[1],finger_state[2],finger_state[3]
+    index,middle,ring,pinky = finger_state
     
     if list1[5].x < list1[17].x:
         # Hand orientation puts the thumb on the LEFT side then check if thumb tip is on left 0f inner joint
@@ -77,8 +75,10 @@ def signs(hand_landmarks):
 
     if all([index,pinky,thumb]) and not any([middle,ring]):
         return "That's cool bro, rock n all."
-    elif middle and not any([thumb,index,ring,pinky]):
-        return "Fuck u too. (from Akshat)"
+    # elif middle and not any([thumb,index,ring,pinky]):
+    #     return "Fuck u too. (from Akshat)"
+    elif all([index,middle]) and not any([ring,pinky,thumb]):
+        return "Peace!"
     elif thumb and not any([index,middle,ring,pinky]):
         return "Thumbs up!"
     else:
