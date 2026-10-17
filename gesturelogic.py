@@ -46,13 +46,7 @@ def handsgesture(hand_landmarks,w,h):
 def signs(hand_landmarks,w,h):
     index,middle,ring,pinky,thumb = finger_states(hand_landmarks,w,h)
 
-    if all([index,pinky,thumb]) and not any([middle,ring]):
-        return "That's cool bro, rock n all."
-    elif middle and not any([thumb,index,ring,pinky]):
-        return "Fuck u too. (from Akshat)"
-    elif all([index,middle]) and not any([ring,pinky,thumb]):
-        return "Peace!"
-    elif thumb and not any([index,middle,ring,pinky]):
-        return "Thumbs up!"
+    if all([index,middle,ring,pinky,thumb]):
+        return "HELLO !!"
     else:
         return ""
