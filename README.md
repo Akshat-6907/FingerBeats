@@ -2,8 +2,9 @@
 
 Play and mix beats with nothing but your hands. HandGesture uses your webcam to track your hand, counts the fingers you hold up, and layers **drums**, **bass** and **synth** loops in real time based on that count.
 
-<!-- Add a demo GIF or screenshot here -->
-<!-- ![Demo](assets/demo.gif) -->
+<img width="158" alt="Image 1" src="https://github.com/user-attachments/assets/cd74afe6-0594-4590-9e11-ee1aca64d61b" />
+<img width="250" alt="Image 2" src="https://github.com/user-attachments/assets/3114a080-26e6-4a8f-b364-17795ca1a01c" />
+
 
 ## ✨ Features
 
