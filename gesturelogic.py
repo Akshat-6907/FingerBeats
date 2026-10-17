@@ -39,9 +39,9 @@ def handsgesture(hand_landmarks,w,h):
     elif all([index,middle,ring,pinky]) and not thumb:
         return 4
     elif all([index,middle,ring,pinky,thumb]): return 5
-
+    elif not any([index,middle,ring,pinky,thumb]): return 0
     #undefined gesture
-    return 0
+    return -1
 
 def signs(hand_landmarks,w,h):
     index,middle,ring,pinky,thumb = finger_states(hand_landmarks,w,h)
