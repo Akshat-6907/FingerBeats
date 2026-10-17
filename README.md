@@ -1,4 +1,4 @@
-# 🎶 HandGesture
+0# 🎶 HandGesture
 
 Play and mix beats with nothing but your hands. HandGesture uses your webcam to track your hand, counts the fingers you hold up, and layers **drums**, **bass** and **synth** loops in real time based on that count.
 
@@ -27,8 +27,8 @@ The total is the sum of fingers shown across all detected hands.
 
 | Total | Synth | Drums | Bass |
 |-------|:-----:|:-----:|:----:|
-|-1 (no defined gesture) | ❌ | ❌ | ❌ |
-| 0 (fist / unrecognised) | ✅ | ❌ | ❌ |
+|-1 (unrecognised gesture) | ❌ | ❌ | ❌ |
+| 0 (fist) | ✅ | ❌ | ❌ |
 | 1 | ✅ | ✅ | ❌ |
 | 2 | ✅ | ❌ | ✅ |
 | 3 | ❌ | ✅ | ✅ |
